@@ -39,3 +39,5 @@ node_modules
 
 # SQLite3
 db.sqlite3
+
+.idea
