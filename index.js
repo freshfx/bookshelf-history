@@ -1,6 +1,6 @@
 'use strict'
 
-const diff = require('json-diff').diff
+const diff = require('@freshfx/json-diff').diff
 const extend = require('xtend')
 
 /**
