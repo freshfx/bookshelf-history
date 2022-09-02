@@ -1,0 +1,6 @@
+.env
+.nvmrc
+.idea/
+test/
+circle.yml
+docker-compose.yml
