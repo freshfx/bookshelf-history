@@ -1,11 +1,11 @@
 {
   "name": "@freshfx/bookshelf-history",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Backup and restore utility for Bookshelf.js",
   "main": "index.js",
   "scripts": {
     "test": "standard && lab --verbose --colors --assert @hapi/code --coverage",
-    "migrate": "knex migrate:latest"
+    "migrate": "knex --knexfile 'test/knexfile.js' migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -24,19 +24,25 @@
   },
   "homepage": "https://github.com/freshfx/bookshelf-history#readme",
   "engines": {
-    "node": "12"
+    "node": ">=20"
   },
   "devDependencies": {
-    "@hapi/code": "^8.0.1",
-    "@hapi/lab": "^22.0.3",
-    "bookshelf": "^1.1.0",
-    "dotenv": "^8.2.0",
-    "knex": "^0.20.10",
-    "pg": "^4.4.3",
-    "standard": "^14.3.1"
+    "@hapi/code": "^9.0.3",
+    "@hapi/lab": "^25.2.0",
+    "bookshelf": "^1.2.0",
+    "dotenv": "^16.4.5",
+    "knex": "^3.1.0",
+    "pg": "^8.11.5",
+    "standard": "^17.1.0"
   },
   "dependencies": {
-    "@freshfx/json-diff": "^0.10.0",
+    "@freshfx/json-diff": "^0.11.0",
     "xtend": "^4.0.2"
+  },
+  "overrides": {
+    "knex": "$knex",
+    "bookshelf": {
+      "knex": "$knex"
+    }
   }
 }

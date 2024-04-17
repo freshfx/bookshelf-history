@@ -67,6 +67,7 @@ module.exports = (bookshelf, options = {}) => {
         if (Object.keys(hookMap).includes(hook)) {
           this.on(hook, (model, options = {}) => {
             if (options.history === false) {
+              // noop
             } else {
               return model.constructor.history(model, Boolean(options.patch), hook, options.transacting)
             }
